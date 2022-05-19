@@ -1,0 +1,77 @@
+#:kivy 2.1.0
+
+<SettingsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        
+        Spinner:
+            background_color: utils.get_color_from_hex("#568ea3")
+            id: bars_select
+            text: "Select Number of Bars"
+            values: ["3","4","5"]
+            pos_hint:{'center_x':.5, 'top': 1}
+            on_text:
+                app.bars_update(self.text)
+                print("The spinner {} has text {}".format(self, self.text))
+
+        Spinner:
+            background_color: utils.get_color_from_hex("#68c3d4")
+            id: timing_select
+            text: "Select Note Length"
+            values: ["quarter","eighth","triplet","quaver triplet"]
+            pos_hint:{'center_x':.5, 'top': 1}
+            on_text:
+                app.note_update(self.text)
+                print("The spinner {} has text {}".format(self, self.text))
+        
+        Spinner:
+            background_color: utils.get_color_from_hex("#568ea3")
+            id: difficulty_select
+            text: "Select Difficulty"
+            values: ["easy","medium","hard"]
+            pos_hint:{'center_x':.5, 'top': 1}
+            on_text:
+                app.difficulty_update(self.text)
+                print("The spinner {} has text {}".format(self, self.text))
+            
+        Spinner:
+            background_color: utils.get_color_from_hex("#68c3d4")
+            id: key_select
+            text: "Select Key"
+            values: ["E","F","F#","G","G#","A","Bb","B","C","C#","D","Eb"]
+            pos_hint:{'center_x':.5, 'top': 0.7}
+            on_text:
+                app.key_update(self.text)
+                print("The spinner {} has text {}".format(self, self.text))
+            
+        Spinner:
+            background_color: utils.get_color_from_hex("#568ea3")
+            id: scale_select
+            text: "Select Scale"
+            values: ["Minor Pentatonic","Major","Minor","Blues","Dorian"]
+            pos_hint:{'center_x':.5, 'top': 0.6}
+            on_text:
+                app.scale_update(self.text)
+                print("The spinner {} has text {}".format(self, self.text))
+
+
+        Button:
+            background_color: utils.get_color_from_hex("#68c3d4")
+            # size_hint: .2, .2
+            pos_hint: {"top": 1, "left": 1}
+            text:
+                "Return Home"
+            on_release:
+                app.change_screen("home_screen")
+            #Image:
+            #    source: 'images\home.png'
+            #    size_hint: .2, .2
+            #    center_x: self.parent.center_x
+            #    center_y: self.parent.center_y
