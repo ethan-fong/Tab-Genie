@@ -1,0 +1,51 @@
+#:kivy 2.1.0
+#:import utils kivy.utils
+
+<StartScreen>:
+    canvas.before: 
+        Color:
+            rgba: utils.get_color_from_hex("#ffffff")
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: utils.get_color_from_hex("#68c3d4")
+        Triangle:
+            points: [0, self.size[1],self.size[0],self.size[1],0,self.size[1]-0.4*self.size[1]]
+        Color:
+            rgba: utils.get_color_from_hex("#568ea3")
+        Triangle:
+            points: [0, self.size[1],self.size[0],self.size[1],self.size[0],self.size[1]-0.4*self.size[1]]
+    
+    #Label:
+        #color:(0,0,0,1)
+        #id: start_txt
+        #outline_color: utils.get_color_from_hex("#568ea3")
+        #outline_width:1
+        #text: "Welcome to Tab Genie!"
+        #markup: True
+        #text_size: self.width, None
+        #font_size: '20dp'
+        #padding_y: (self.height - self.line_height) / 2
+        #halign: "center"
+
+    Button:
+    
+        background_normal: ''
+        background_color: utils.get_color_from_hex("#f652a0")
+        size_hint: 1, .2
+        text:
+            "Let's Get Started!"
+        on_release:
+            app.change_screen("home_screen")
+        
+    #Image:
+        #source: 'images/guitar.png'
+        #size_hint: .2, .2
+        #pos_hint: {"top": 1, "right": 1}
+        #size: self.texture_size
+    Image:
+        source: 'images/logo2.png'
+        size_hint: 0.5, 0.5
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        #size: self.texture_size

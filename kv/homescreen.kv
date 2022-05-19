@@ -1,0 +1,147 @@
+#:kivy 2.1.0
+ 
+<HomeScreen>:
+    canvas.before: 
+        Color:
+            rgba: utils.get_color_from_hex("#ffffff")
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: utils.get_color_from_hex("#f652a0")
+        Triangle:
+            points: [0, self.size[1],self.size[0],self.size[1],0,self.size[1]-0.4*self.size[1]]
+        Color:
+            rgba: utils.get_color_from_hex("#68c3d4")
+        Triangle:
+            points: [0, self.size[1],self.size[0],self.size[1],self.size[0],self.size[1]-0.4*self.size[1]]
+    
+    Label:
+        color:(0,0,0,1)
+        id: home_txt
+        text: "Click to Generate!"
+        outline_color: utils.get_color_from_hex("#568ea3")
+        outline_width:1
+        markup: True
+        pos_hint: {"top": 1.1, "left": 1}
+        text_size: self.width, None
+        font_size: '20dp'
+        halign: "center"
+    Label:
+        color:(0,0,0,1)
+        id: diff
+        text: "Tab Difficulty is medium"
+        markup: True
+        font_size: 20
+        pos_hint: {"top": 1.2, "left": 0.5}
+    
+    Label:
+        color:(0,0,0,1)
+        id: key
+        text: "Key is E"
+        markup: True
+        font_size: 20
+        pos_hint: {"top": 1.25, "left": 0.5}
+    
+    Label:
+        color:(0,0,0,1)
+        id: note
+        text: "Note lengths are quarter notes"
+        markup: True
+        font_size: 20
+        pos_hint: {"top": 1.45, "left": 0.5}
+    
+    Label:
+        color:(0,0,0,1)
+        id: bars
+        text: "Number of Bars: 3"
+        markup: True
+        font_size: 20
+        pos_hint: {"top": 1.4, "left": 0.5}
+
+    Label:
+        color:(0,0,0,1)
+        id: scale
+        text: "Scale is Minor Pentatonic"
+        markup: True
+        font_size: 20
+        pos_hint: {"top": 1.15, "left": 0.5}
+    
+    Label:
+        color:(0,0,0,1)
+        font_name: "Cour"
+        id: e1
+        text: ""
+        markup: True
+        font_size: '20dp'
+        pos_hint: {"top": 1, "left": 1}
+        
+    Label:
+        color:(0,0,0,1)
+        font_name: "Cour"
+        id: b2
+        text: ""
+        markup: True
+        font_size: '20dp'
+        pos_hint: {"top": 0.95, "left": 1}
+    Label:
+        color:(0,0,0,1)
+        font_name: "Cour"
+        id: g3
+        text: ""
+        markup: True
+        font_size: '20dp'
+        pos_hint: {"top": 0.9, "left": 1}
+    Label:
+        color:(0,0,0,1)
+        font_name: "Cour"
+        id: d4
+        text: ""
+        markup: True
+        font_size: '20dp'
+        pos_hint: {"top": 0.85, "left": 1}
+    Label:
+        color:(0,0,0,1)
+        font_name: "Cour"
+        id: a5
+        text: ""
+        markup: True
+        font_size: '20dp'
+        pos_hint: {"top": 0.8, "left": 1}
+    Label:
+        color:(0,0,0,1)
+        font_name: "Cour"
+        id: e6
+        text: ""
+        markup: True
+        font_size: '20dp'
+        pos_hint: {"top": 0.75, "left": 1}
+
+    Button:
+        id: gen
+        background_color: utils.get_color_from_hex("#568ea3")
+        size_hint: .2, .2
+        pos_hint: {"top": .2, "right": 1}
+        #text:
+        #    "Generate"
+        on_release:
+            app.generate_button()
+        Image:
+            size: self.size
+            source: 'images\generate.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        size_hint: .2, .2
+        background_color: utils.get_color_from_hex("#568ea3")
+        pos_hint: {"top": .2, "left": 1}
+        #text:
+        #    "Settings"
+        on_release:
+            app.change_screen("settings_screen")
+        Image:
+            size: self.size 
+            source: 'images\settings.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
