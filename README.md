@@ -6,7 +6,7 @@ Tabgenie is a tab generator for the guitar, designed to help guitar players lear
 
 ![demogif](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Recording%202022-05-19%20at%2001.38.49.gif)
 
-# Features
+## Features
 
 - Generate tabs for any key and scale
 - Subsequent notes are related to the previous note through gaussian probability distributions leading to better flow
@@ -14,11 +14,11 @@ Tabgenie is a tab generator for the guitar, designed to help guitar players lear
 - Special features such as bends and slides can be generated
 - Bad luck protection so tablature is never empty
 
-# Installation
+## Installation
 Requirements: Python 3.10 and PyInstaller 5.1
 
 
-# Executable
+## Executable
 
 To run a precompiled version of the application, download all the files in the **dist** folder and run the tabgenie.exe file. Note that the executable only works on windows OS.
 
