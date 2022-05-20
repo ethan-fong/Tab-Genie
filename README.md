@@ -2,8 +2,6 @@
 
 Tabgenie is a Tab generator for the guitar, made with the kivy app development tool and written in python. 
 
-![logo](docs/logo2.JPG)
-
 ## Demo
 
 ![demogif](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Recording%202022-05-19%20at%2001.38.49.gif)
