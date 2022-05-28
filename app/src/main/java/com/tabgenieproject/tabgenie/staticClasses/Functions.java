@@ -210,7 +210,7 @@ public class Functions {
         mu = prev_index;
         sigma = 1;
         while(next_note_index<1 || next_note_index>note_index_max){
-            next_note_index = (int) Math.round(r.nextGaussian()*mu+sigma);
+            next_note_index = (int) Math.round(r.nextGaussian()*sigma+mu);
         }
 
         if(next_note_index == note_index_max){
