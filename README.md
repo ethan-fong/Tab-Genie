@@ -2,9 +2,14 @@
 
 Tabgenie is a tab generator for the guitar, designed to help guitar players learn how to play riffs and scales. The application generates a guitar tab in any key and scale that the user chooses, and a variety of settings keeps the tabs interesting and challenging to play. A simple user interface allows for easy use and the tab generation algorithm mimics the features of real guitar tabs (see [features](#features) section below). Thanks for reading!
 
-## Demo
+May 28, 2022: Released on Google play store!
 
-  ![demogif](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Recording%202022-05-19%20at%2001.38.49.gif)
+## Demo
+Windows version demo:  
+
+  ![demogif](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Recording%202022-05-19%20at%2001.38.49.gif)  
+Android version demo:  
+  ![demogif2](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Tabgenie_screencap.gif)
 
 ## Features
 
@@ -24,7 +29,8 @@ To run a precompiled version of the application, download all the files in the *
 
 ## Contact
 
-Ethan Fong - ethan.fong@mail.utoronto.ca
+Ethan Fong - ethan.fong@mail.utoronto.ca  
+Alex Chak - alex.hy.chak@gmail.com
 
 Project Link: https://github.com/ethan-fong/Tabgenie
 
