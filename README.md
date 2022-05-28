@@ -29,7 +29,7 @@ To run a precompiled version of the application, download all the files in the *
 
 ## Contact
 
-Ethan Fong - ethan.fong@mail.utoronto.ca
+Ethan Fong - ethan.fong@mail.utoronto.ca  
 Alex Chak - alex.hy.chak@gmail.com
 
 Project Link: https://github.com/ethan-fong/Tabgenie
