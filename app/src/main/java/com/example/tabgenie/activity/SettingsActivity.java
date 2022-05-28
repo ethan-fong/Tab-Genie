@@ -62,9 +62,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         Settings settings = (Settings)i.getSerializableExtra("setting");
         bars_spinner.setSelection(Arrays.asList(bars).indexOf(Integer.toString(settings.getBars())));
         note_length_spinner.setSelection(Arrays.asList(notes).indexOf(settings.getNote()));
-        difficulty_spinner.setSelection(Arrays.asList(difficulty).indexOf(settings.getNote()));
-        key_spinner.setSelection(Arrays.asList(key).indexOf(settings.getNote()));
-        scale_spinner.setSelection(Arrays.asList(scale).indexOf(settings.getNote()));
+        difficulty_spinner.setSelection(Arrays.asList(difficulty).indexOf(settings.getDifficulty()));
+        key_spinner.setSelection(Arrays.asList(key).indexOf(settings.getKey()));
+        scale_spinner.setSelection(Arrays.asList(scale).indexOf(settings.getScale()));
     }
 
 
