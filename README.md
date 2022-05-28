@@ -5,6 +5,7 @@ Tabgenie is a tab generator for the guitar, designed to help guitar players lear
 ## Demo
 
   ![demogif](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Recording%202022-05-19%20at%2001.38.49.gif)
+  ![demogif2](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Tabgenie_screencap.gif)
 
 ## Features
 
