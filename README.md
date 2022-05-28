@@ -1,6 +1,6 @@
 # Tabgenie
 
-Tabgenie is a tab generator for the guitar, designed to help guitar players learn how to play riffs and scales. The application generates a guitar tab in any key and scale that the user chooses, and a variety of settings keeps the tabs interesting and challenging to play. A simple user interface allows for easy use and the tab generation algorithm mimics the features of real guitar tabs (see [features](#features) section below). Thanks for reading!
+Tabgenie is a tab generator for the guitar, designed to help guitar players learn how to play riffs and scales. A simple user interface allows for easy use and the tab generation algorithm mimics the features of real guitar tabs (see [features](#features) section below). Thanks for reading!
 
 May 28, 2022: Released on Google play store!
 
