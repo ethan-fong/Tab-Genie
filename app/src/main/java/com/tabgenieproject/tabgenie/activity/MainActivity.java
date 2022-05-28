@@ -1,4 +1,4 @@
-package com.example.tabgenie.activity;
+package com.tabgenieproject.tabgenie.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.tabgenie.R;
-import com.example.tabgenie.dataclass.Settings;
-import com.example.tabgenie.staticClasses.Functions;
+import com.tabgenieproject.tabgenie.R;
+import com.tabgenieproject.tabgenie.dataclass.Settings;
+import com.tabgenieproject.tabgenie.staticClasses.Functions;
 
 import java.util.ArrayList;
 import java.util.Random;

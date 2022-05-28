@@ -1,4 +1,4 @@
-package com.example.tabgenie.dataclass;
+package com.tabgenieproject.tabgenie.dataclass;
 
 import java.io.Serializable;
 

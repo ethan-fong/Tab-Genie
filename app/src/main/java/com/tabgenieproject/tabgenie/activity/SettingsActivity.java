@@ -1,4 +1,4 @@
-package com.example.tabgenie.activity;
+package com.tabgenieproject.tabgenie.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -8,11 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 
-import com.example.tabgenie.R;
-import com.example.tabgenie.dataclass.Settings;
+import com.tabgenieproject.tabgenie.R;
+import com.tabgenieproject.tabgenie.dataclass.Settings;
 
 import java.util.Arrays;
 

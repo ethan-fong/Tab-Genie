@@ -1,17 +1,16 @@
-package com.example.tabgenie.activity;
+package com.tabgenieproject.tabgenie.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.example.tabgenie.R;
-import com.example.tabgenie.dataclass.Settings;
+import com.tabgenieproject.tabgenie.R;
+import com.tabgenieproject.tabgenie.R;
+import com.tabgenieproject.tabgenie.dataclass.Settings;
 
 public class FirstPageActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,4 +1,4 @@
-package com.example.tabgenie;
+package com.tabgenieproject.tabgenie;
 
 import org.junit.Test;
 

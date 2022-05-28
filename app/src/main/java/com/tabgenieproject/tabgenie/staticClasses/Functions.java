@@ -1,6 +1,6 @@
-package com.example.tabgenie.staticClasses;
+package com.tabgenieproject.tabgenie.staticClasses;
 
-import com.example.tabgenie.dataclass.Settings;
+import com.tabgenieproject.tabgenie.dataclass.Settings;
 
 import java.util.ArrayList;
 import java.util.Arrays;
