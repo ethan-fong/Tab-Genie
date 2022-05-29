@@ -18,7 +18,6 @@ public class Functions {
         note_convert.put("eighth",8);
         note_convert.put("triplet",3);
         note_convert.put("quaver triplet",6);
-        System.out.println(settings);
         int note_type =  note_convert.get(settings.getNote());
         HashMap<String,Integer> difficulty_convert = new HashMap<String,Integer>();
         difficulty_convert.put("easy",6);
