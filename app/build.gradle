@@ -9,8 +9,8 @@ android {
         applicationId "com.tabgenieproject.tabgenie"
         minSdk 21
         targetSdk 31
-        versionCode 2
-        versionName "2"
+        versionCode 3
+        versionName "3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
