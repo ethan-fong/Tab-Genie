@@ -244,6 +244,16 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
 
   return tab_out;
 }
+function generateGaussian(mean,std){
+  var _2PI = Math.PI * 2;
+  var u1 = Math.random();
+  var u2 = Math.random();
+  
+  var z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(_2PI * u2);
+  var z1 = Math.sqrt(-2.0 * Math.log(u1)) * Math.sin(_2PI * u2);
+
+  return z0 * std + mean;
+}
 
 function gaussian_next_note(prev_string, prev_index, max_rand_note_list) {
   var mu, next_note_index, next_string, note_index_max, sigma;
@@ -253,7 +263,9 @@ function gaussian_next_note(prev_string, prev_index, max_rand_note_list) {
   sigma = 1;
 
   while (next_string < 0 || next_string > 5) {
-    next_string = Math.floor(Math.random() *6);//gaussian
+  
+    next_string = Math.floor(generateGaussian(mu,sigma));//gaussian
+    console.log(next_string)
   }
 
   note_index_max = max_rand_note_list[next_string] - 1;
@@ -261,7 +273,9 @@ function gaussian_next_note(prev_string, prev_index, max_rand_note_list) {
   sigma = 1;
 
   while (next_note_index < 1 || next_note_index > note_index_max) {
-    next_note_index =Math.floor(Math.random() *6);//gaussian
+    
+    next_note_index =Math.floor(generateGaussian(mu,sigma));//gaussian
+    console.log(next_note_index)
   }
 
   if (next_note_index === note_index_max) {
@@ -324,6 +338,7 @@ function generate(){
   //   note_v = "quarter"
   //   bars_v = 3
   document.getElementById("tab").style.fontFamily = "monospace"
+  
 }
     
 </script>
