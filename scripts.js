@@ -1,6 +1,5 @@
-import * as random from 'random';
-
-
+$.backstretch("background.jpg")
+      
 difficulty = "medium"
 key = "E"
 scale = "Minor Pentatonic"
@@ -55,9 +54,9 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
       note = string.slice(-1)[0] + interval;
 
       if (note > 12) {
-        string.append((string.slice(-1)[0] + interval) % 12);
+        string.push((string.slice(-1)[0] + interval) % 12);
       } else {
-        string.append(string.slice(-1)[0] + interval);
+        string.push(string.slice(-1)[0] + interval);
       }
     }
   }
@@ -84,15 +83,15 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
       i = _pj_d[_pj_f];
 
       if (i > 12) {
-        new_string_nos[new_string_nos.index(i)] = i % 12;
+        new_string_nos[new_string_nos.indexOf(i)] = i % 12;
       }
     }
 
-    new_key_allowed.append(new_string_nos);
+    new_key_allowed.push(new_string_nos);
   }
 
   for (var i = 0, _pj_a = 6; i < _pj_a; i += 1) {
-    new_key_allowed[i] = sorted(set(new_key_allowed[i]));
+    new_key_allowed[i] = [...new Set(new_key_allowed[i])].sort();
   }
 
   tab_out = ["e|", "B|", "G|", "D|", "A|", "E|"];
@@ -112,14 +111,14 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
 
   bend = false;
   pull = false;
-  rand_string = random.randint(0, 5);
-  rand_note = random.randint(0, new_key_allowed[rand_string].length - 1);
+  rand_string = Math.floor(Math.random() * 6);
+  rand_note = Math.floor(Math.random() * new_key_allowed[rand_string].length);
 
   for (var bar = 0, _pj_a = number_bars; bar < _pj_a; bar += 1) {
     for (var i = 0, _pj_b = note_type; i < _pj_b; i += 1) {
       made = false;
 
-      if (!bend && !pull && random.randint(0, difficulty + 2 * (i % 2)) > 1 && !(i === note_type - 1 && !made)) {
+      if (!bend && !pull && Math.floor(Math.random(difficulty + 2 * (i % 2)+1)) > 1 && !(i === note_type - 1 && !made)) {
         tab_out = function () {
           var _pj_c = [],
               _pj_d = tab_out;
@@ -149,10 +148,10 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
           }
         }
 
-        if (rand_note < index_max_list[rand_string] - 1 && rand_note !== 0 && random.randint(0, 2) === 0) {
-          if (random.randint(0, 1) === 0) {
+        if (rand_note < index_max_list[rand_string] - 1 && rand_note !== 0 && Math.floor(Math.random() *3) === 0) {
+          if (Math.floor(Math.random() * 2)===0) {
             bend = true;
-            special_type = random.randint(0, 2);
+            special_type = Math.floor(Math.random() * 3);
 
             if (special_type === 0) {
               if (new_key_allowed[rand_string][rand_note].toString().length > 1) {
@@ -177,8 +176,7 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
             }
           } else {
             pull = true;
-            special_type = random.randint(0, 1);
-
+            special_type = Math.floor(Math.random() * 2);
             if (special_type === 0) {
               if (new_key_allowed[rand_string][rand_note].toString().length > 1) {
                 tab_out[rand_string] = tab_out[rand_string] + new_key_allowed[rand_string][rand_note].toString() + "p";
@@ -218,6 +216,16 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
 
   return tab_out;
 }
+function generateGaussian(mean,std){
+  var _2PI = Math.PI * 2;
+  var u1 = Math.random();
+  var u2 = Math.random();
+  
+  var z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(_2PI * u2);
+  var z1 = Math.sqrt(-2.0 * Math.log(u1)) * Math.sin(_2PI * u2);
+
+  return z0 * std + mean;
+}
 
 function gaussian_next_note(prev_string, prev_index, max_rand_note_list) {
   var mu, next_note_index, next_string, note_index_max, sigma;
@@ -227,7 +235,9 @@ function gaussian_next_note(prev_string, prev_index, max_rand_note_list) {
   sigma = 1;
 
   while (next_string < 0 || next_string > 5) {
-    next_string = round(random.gauss(mu, sigma));
+  
+    next_string = Math.floor(generateGaussian(mu,sigma));//gaussian
+    console.log(next_string)
   }
 
   note_index_max = max_rand_note_list[next_string] - 1;
@@ -235,18 +245,19 @@ function gaussian_next_note(prev_string, prev_index, max_rand_note_list) {
   sigma = 1;
 
   while (next_note_index < 1 || next_note_index > note_index_max) {
-    next_note_index = round(random.gauss(mu, sigma));
-    console.log("nni: ", next_note_index);
+    
+    next_note_index =Math.floor(generateGaussian(mu,sigma));//gaussian
+    console.log(next_note_index)
   }
 
   if (next_note_index === note_index_max) {
-    if (random.randint(0, 1) === 0) {
+    if (Math.floor(Math.random() *2) === 0) {
       next_note_index -= 1;
     }
   }
 
   if (next_note_index === 0) {
-    if (random.randint(0, 1) === 0) {
+    if (Math.floor(Math.random() *2) === 0) {
       next_note_index += 1;
     }
   }
@@ -255,14 +266,48 @@ function gaussian_next_note(prev_string, prev_index, max_rand_note_list) {
 }
 
 function convert_to_string(ar) {
-  return "\n".join(ar);
+  return ar.join("\r\n");
 }
 
 function generate(){
+  var bars_select = document.getElementById('bars');
+  var value_bars = bars_select.options[bars_select.selectedIndex].value;
 
-    document.setElementById("tab").innerHTML = "test"//convert_to_string(tab_gen(key,difficulty,scale,note,bars));
+  var note_select = document.getElementById('note');
+  var value_note = note_select.options[note_select.selectedIndex].value;
 
-}
+  var difficulty_select = document.getElementById('difficulty');
+  var value_difficulty = difficulty_select.options[difficulty_select.selectedIndex].value;
+
+  var key_select = document.getElementById('key');
+  var value_key = key_select.options[key_select.selectedIndex].value;
+
+  var scale_select = document.getElementById('scale');
+  var value_scale = scale_select .options[scale_select.selectedIndex].value;
+
+  document.getElementById("note_text").innerHTML = "Note lengths are "+value_note+" notes";
+  document.getElementById("bars_text").innerHTML = "Number of bars: "+value_bars
+  document.getElementById("key_text").innerHTML = "Key is "+value_key
+  document.getElementById("difficulty_text").innerHTML = "Tab Difficuly is "+value_difficulty
+  document.getElementById("scale_text").innerHTML = "Scale is "+value_scale
+  document.getElementById("tab_num_text").innerHTML = "Random Tab Number "+ Math.floor(Math.random() *501)
+
+  // <center id="note_text">Note lengths are quarter notes</center>
+  //   <center id="bars_text">Number of Bars:3</center>
+  //   <center id="key_text">Key is E</center>
+  //   <center id="difficulty_text">Tab Difficulty is medium</center>
+  //   <center id="scale_text">Scale is Minor Pentatonic</center>
+  //   <center id="tab_num_text">Random tab number: 0</center>
 
 
-
+  document.getElementById("tab").innerHTML = convert_to_string(tab_gen(value_key,value_difficulty,value_scale,value_note,value_bars));
+  //convert_to_string(tab_gen("E","medium","Minor Pentatonic","quarter",3));
+  
+  
+  // difficulty_v = "medium"
+  //   key_v = "E"
+  //   scale_v = "Minor Pentatonic"
+  //   note_v = "quarter"
+  //   bars_v = 3
+  document.getElementById("tab").style.fontFamily = "monospace"}
+  
