@@ -90,8 +90,22 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
     new_key_allowed.push(new_string_nos);
   }
 
-  for (var i = 0, _pj_a = 6; i < _pj_a; i += 1) {
-    new_key_allowed[i] = [...new Set(new_key_allowed[i])].sort();
+    for (var i = 0, _pj_a = 6; i < _pj_a; i += 1) {
+    var tempnew_key_allowed = [];
+    for (var x = 0; x < new_key_allowed[i].length; x+=1) {
+      tempnew_key_allowed[x] = parseInt(new_key_allowed[i][x]);
+    }
+    var temparr = [...new Set(tempnew_key_allowed)]
+    temparr.sort((a, b) => {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  return 0;
+});
+    new_key_allowed[i] = temparr;
   }
 
   tab_out = ["e|", "B|", "G|", "D|", "A|", "E|"];
