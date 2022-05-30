@@ -27,7 +27,7 @@ Android version demo:
 - Bad luck protection so tablature is never empty
 
 ## Installation
-Requirements: Python 3.10 and PyInstaller 5.1
+Windows requirements: Python 3.10 and PyInstaller 5.1
 
 
 ## Executable
