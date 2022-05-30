@@ -8,16 +8,17 @@
 .container {
 	margin-left: 10%;
 	margin-right: 10%;
-	background-color:rgba(256, 256, 256, 0.7);
+	background-color:rgba(230, 230, 230, 0.85);
 	padding: 30px;
 	text-align: center	
 }
 .Info{
-	font-family: Garamond, serif;
+	font-family: 'Courier New';
 	font-size: 100%;
+	font-weight: bold;
 }
 h1 {
-    font-family: 'Corben', Georgia, Times, serif;
+    font-family: 'Corben', Georgia, Times, serif;;
 	text-shadow: 2px 2px 2px #ccc;
 	font-size: 500%;
 	
@@ -76,6 +77,5 @@ button {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	*margin-left: .3em;
 }
-
 
 

@@ -1,12 +1,31 @@
-$.backstretch("background.jpg")
+$.backstretch("guitar.jpg")
 
-
-      
 difficulty = "medium"
 key = "E"
 scale = "Minor Pentatonic"
 note = "quarter"
 bars = 3
+
+
+function changebackground(){
+  var background_select = document.getElementById('background');
+  var value_background = parseInt(background_select.options[background_select.selectedIndex].value);
+  switch(value_background){
+    case 0:
+      $.backstretch("guitar.jpg");
+      break;
+    case 1:
+      $.backstretch("back.gif");
+      break;
+    case 2:
+      $.backstretch("background.jpg");
+      break;
+    case 3:
+      $.backstretch("ian.jpg");
+  }
+
+}
+
 
 function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
   var bend, difficulty, difficulty_convert, index_max_list, key_convert, key_delta, key_of_e_allowed, made, new_generated, new_key_allowed, new_string_nos, note, note_convert, note_type, pull, rand_note, rand_string, scale_convert, scale_intervals, special_type, tab_out;
@@ -314,7 +333,7 @@ function generate(){
   document.getElementById("note_text").innerHTML = "Note lengths are "+value_note+" notes";
   document.getElementById("bars_text").innerHTML = "Number of bars: "+value_bars
   document.getElementById("key_text").innerHTML = "Key is "+value_key
-  document.getElementById("difficulty_text").innerHTML = "Tab Difficuly is "+value_difficulty
+  document.getElementById("difficulty_text").innerHTML = "Tab Difficulty is "+value_difficulty
   document.getElementById("scale_text").innerHTML = "Scale is "+value_scale
   document.getElementById("tab_num_text").innerHTML = "Random Tab Number "+ Math.floor(Math.random() *501)
 
