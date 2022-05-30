@@ -1,4 +1,4 @@
-# Tabgenie
+# :guitar: Tabgenie
 
 Tabgenie is a tab generator for the guitar, designed to help guitar players learn how to play riffs and scales. A simple user interface allows for easy use and the tab generation algorithm mimics the features of real guitar tabs (see [features](#features) section below). 
 
