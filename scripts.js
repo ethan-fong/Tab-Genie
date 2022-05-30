@@ -1,4 +1,6 @@
 $.backstretch("background.jpg")
+
+
       
 difficulty = "medium"
 key = "E"
@@ -131,8 +133,12 @@ function tab_gen(key_in, difficulty_in, scale_in, note_length, number_bars) {
   for (var bar = 0, _pj_a = number_bars; bar < _pj_a; bar += 1) {
     for (var i = 0, _pj_b = note_type; i < _pj_b; i += 1) {
       made = false;
-
-      if (!bend && !pull && Math.floor(Math.random(difficulty + 2 * (i % 2)+1)) > 1 && !(i === note_type - 1 && !made)) {
+      // console.log(bend)
+      // console.log(pull)
+      // console.log(note_type)
+      // console.log(made)
+      //console.log(Math.floor(Math.random()*difficulty+2*(i%2)))
+      if(!bend && !pull && (Math.floor(Math.random()*difficulty+2*(i%2)+1) > 1) && !(i===(note_type-1)&&!made)){
         tab_out = function () {
           var _pj_c = [],
               _pj_d = tab_out;
@@ -299,6 +305,12 @@ function generate(){
   var scale_select = document.getElementById('scale');
   var value_scale = scale_select .options[scale_select.selectedIndex].value;
 
+  localStorage.setItem("bars",value_bars);
+  localStorage.setItem("note",value_note);
+  localStorage.setItem("difficulty",value_difficulty);
+  localStorage.setItem("key",value_key);
+  localStorage.setItem("scale",value_scale);
+
   document.getElementById("note_text").innerHTML = "Note lengths are "+value_note+" notes";
   document.getElementById("bars_text").innerHTML = "Number of bars: "+value_bars
   document.getElementById("key_text").innerHTML = "Key is "+value_key
@@ -324,4 +336,8 @@ function generate(){
   //   note_v = "quarter"
   //   bars_v = 3
   document.getElementById("tab").style.fontFamily = "monospace"}
+
+
+
+
   
