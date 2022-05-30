@@ -8,6 +8,10 @@ May 29, 2022: Ported to a web application [here](https://ethan-fong.github.io/Ta
 
 ## Demo
 [If you want to try an interactive web version of the code, click here!](https://ethan-fong.github.io/Tab-Genie/)  
+
+Web application demo:  
+  ![demogif2](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Webappscreencap.gif)  
+  
 Windows version demo:  
 
   ![demogif](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Recording%202022-05-19%20at%2001.38.49.gif)  
