@@ -1,4 +1,4 @@
-$.backstretch("guitar.jpg")
+$.backstretch("default_gif.gif")
 
 difficulty = "medium"
 key = "E"
@@ -12,7 +12,7 @@ function changebackground(){
   var value_background = parseInt(background_select.options[background_select.selectedIndex].value);
   switch(value_background){
     case 0:
-      $.backstretch("guitar.jpg");
+      $.backstretch("default_gif.gif");
       break;
     case 1:
       $.backstretch("back.gif");
@@ -22,6 +22,13 @@ function changebackground(){
       break;
     case 3:
       $.backstretch("ian.jpg");
+      break;
+    case 4:
+      $.backstretch("guitar.jpg");
+      break;
+    case 5:
+      $.backstretch("guitar_2.jpg");
+      break;
   }
 
 }
