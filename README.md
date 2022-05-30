@@ -4,7 +4,7 @@ Tabgenie is a tab generator for the guitar, designed to help guitar players lear
 
 May 28, 2022: Released on Google play store!
 
-May 29, 2022: Ported to a web application [here](https://ethan-fong.github.io/Tabgenie/)!
+May 29, 2022: Ported to a web application [here](https://ethan-fong.github.io/Tab-Genie/)!
 
 ## Demo
 Windows version demo:  
