@@ -1,10 +1,5 @@
 $.backstretch("default_gif.gif")
 
-difficulty = "medium"
-key = "E"
-scale = "Minor Pentatonic"
-note = "quarter"
-bars = 3
 
 
 function changebackground(){
@@ -30,7 +25,6 @@ function changebackground(){
       $.backstretch("guitar_2.jpg");
       break;
   }
-
 }
 
 
