@@ -24,7 +24,7 @@ Android version demo:
 - Subsequent notes are related to the previous note through gaussian probability distributions leading to better flow
 - Notes more likely generated on strong beats (1/3) for an enhanced sense of rhythm
 - Special features such as bends and slides can be generated
-- Bad luck protection so tablature is never empty
+- Difficulty setting to generate more or less notes (on average)
 
 ## Installation
 Windows requirements: Python 3.10 and PyInstaller 5.1
