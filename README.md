@@ -7,7 +7,7 @@ May 28, 2022: Released on Google play store [here](https://play.google.com/store
 May 29, 2022: Ported to a web application [here](https://ethan-fong.github.io/Tab-Genie/)!
 
 ## Demo
-:point_right:[If you want to try an interactive web version of the code, click here!](https://ethan-fong.github.io/Tab-Genie/) :point_left: 
+:point_right: [If you want to try an interactive web version of the code, click here!](https://ethan-fong.github.io/Tab-Genie/) :point_left: 
 
 Web application demo:  
   ![demogif2](https://github.com/ethan-fong/Tabgenie/blob/main/docs/Webappscreencap.gif)  
